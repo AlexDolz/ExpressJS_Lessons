@@ -1,0 +1,27 @@
+body {
+  background-color: cadetblue;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  height: 100px;
+  background-color: burlywood;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: brown;
+}
+
+.menu_wrapper {
+  display: flex;
+  gap: 10px;
+}

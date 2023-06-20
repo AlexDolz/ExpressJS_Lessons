@@ -2,12 +2,20 @@ const express = require("express");
 
 const app = express();
 
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  res.send("<h1>Hello world!</h1>");
+  res.render("index");
 });
 
 app.get("/contacts/:id", (req, res) => {
-  res.send(`<h1>users id: ${req.params.id}</h1>`);
+  let data = {
+    title: "Contacts",
+    username: req.params.id,
+    languages: ["DE", "ENG", "IT", "FR", "LT"],
+  };
+  res.render("contacts", data);
 });
 app.get("/users/:usersname/:id", (req, res) => {
   res.send(
