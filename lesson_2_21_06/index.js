@@ -26,8 +26,9 @@ app.get("/users/:id", async (req, res) => {
   res.json(user[0]);
 });
 
-app.post("/post", (req, res) => {
-  res.send("TEST!");
+app.post("/post", async (req, res) => {
+  const user = await db.createNewUser(req.body);
+  res.json({ response: user, status: "ok" });
 });
 
 app.get("/home", (req, res) => {
